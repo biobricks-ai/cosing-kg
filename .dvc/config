@@ -1,0 +1,6 @@
+[core]
+  remote = biobricks.ai
+['remote "biobricks.ai"']
+  url = https://ins-dvc.s3.amazonaws.com/insdvc
+['remote "s3.biobricks.ai"']
+  url = s3://ins-dvc/insdvc
