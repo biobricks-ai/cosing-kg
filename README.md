@@ -1,35 +1,32 @@
-# How to build bricks
+# CosIng KG
 
-1. Create a brick named `{newbrick}` from this template
-```
-gh repo create biobricks-ai/{newbrick} -p biobricks-ai/brick-template --public
-gh repo clone biobricks-ai/{newbrick}
-cd newbrick
-```
+## Description
 
-2. Edit stages according to your needs:
-    Recommended scripts:
-    - ``01_download.sh``
-    - ``02_unzip.sh``
-    - ``03_build.sh`` calling a function to process individual files like ``csv2parquet.R`` or ``csv2parquet.py``
+> [CosIng](https://ec.europa.eu/growth/tools-databases/cosing/)
+> is the European Commission database for information on cosmetic
+> substances and ingredients contained in the
+>
+> -   Cosmetics [Regulation (EC) No
+>     1223/2009](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02009R1223-20190813)
+>     of the European Parliament and of the Council
+> -   Cosmetics [Directive
+>     76/768/EEC](http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31976L076&locale=en)
+>     (cosmetics directive), as amended
+> -   [Glossary of common ingredient
+>     names](http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31996D0335&locale=en)
+>     for the purpose of labelling cosmetic products placed on the market
+>     (as established by [Decision (EU)
+>     2019/701](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32019D0701&from=EN)
+>     of 5 April 2019)
+> -   Opinions on cosmetic ingredients of the Scientific Committee for
+>     Consumer Safety ([list of SCCS
+>     opinions](http://ec.europa.eu/health/scientific_committees/consumer_safety/opinions_en))
 
-3. Replace stages in dvc.yaml with your new stages
-    
-4. Build your brick
-```
-dvc repro # runs new stages
-```
+Search website: <https://ec.europa.eu/growth/tools-databases/cosing/>
 
-5. Push the data to biobricks.ai
-```
-dvc push -r s3.biobricks.ai 
-```
+Database Description: <https://single-market-economy.ec.europa.eu/sectors/cosmetics/cosmetic-ingredient-database_en>
 
-6. Commit the brick
-```
-git add -A && git commit -m "some message"
-git push
-```
-
-7. Monitor the bricktools github action
+CSV download (via Wayback Machine):
+  - <https://web.archive.org/web/20220926233955/https://data.europa.eu/data/datasets/cosmetic-ingredient-database-ingredients-and-fragrance-inventory?locale=en>
+  - <https://web.archive.org/web/20220926233955mp_/https://ec.europa.eu/growth/tools-databases/cosing/pdf/COSING_Ingredients-Fragrance%20Inventory_v2.csv>
 
