@@ -13,13 +13,7 @@ mkdir -p $listpath
 cd $listpath;
 
 # Define the FTP base address
-ftpbase=""
-
-# Retrieve the list of files to download from FTP base address
-wget --no-remove-listing $ftpbase
-cat index.html | grep -Po '(?<=href=")[^"]*' | sort | cut -d "/" -f 10 > files.txt
-rm .listing
-rm index.html
+httplink="https://web.archive.org/web/20220926233955mp_/https://ec.europa.eu/growth/tools-databases/cosing/pdf/COSING_Ingredients-Fragrance%20Inventory_v2.csv"
 
 # Create the download directory
 downloadpath="$localpath/download"
@@ -27,9 +21,7 @@ echo "Download path: $downloadpath"
 mkdir -p "$downloadpath"
 cd $downloadpath;
 
-# Download files in parallel
-cat $listpath/files.txt | xargs -P14 -n1 bash -c '
-echo $1
-wget -nH -q -nc -P '$downloadpath' '$ftpbase'$1' {}
+# Download file
+wget -P $downloadpath $httplink
 
 echo "Download done."
