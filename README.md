@@ -24,7 +24,9 @@
 
 Search website: <https://ec.europa.eu/growth/tools-databases/cosing/>
 
-Database Description: <https://single-market-economy.ec.europa.eu/sectors/cosmetics/cosmetic-ingredient-database_en>
+Database Description:
+- <https://single-market-economy.ec.europa.eu/sectors/cosmetics/cosmetic-ingredient-database_en>
+- [(PDF) Guide to Consulting CosIng](https://ec.europa.eu/growth/tools-databases/cosing/assets/images/CosIng_FO.pdf)
 
 CSV download (via Wayback Machine):
   - <https://web.archive.org/web/20220926233955/https://data.europa.eu/data/datasets/cosmetic-ingredient-database-ingredients-and-fragrance-inventory?locale=en>
