@@ -6,12 +6,6 @@
 localpath=$(pwd)
 echo "Local path: $localpath"
 
-# Create the list directory to save list of remote files and directories
-listpath="$localpath/list"
-echo "List path: $listpath"
-mkdir -p $listpath
-cd $listpath;
-
 # Define the FTP base address
 httplink="https://web.archive.org/web/20220926233955mp_/https://ec.europa.eu/growth/tools-databases/cosing/pdf/COSING_Ingredients-Fragrance%20Inventory_v2.csv"
 
