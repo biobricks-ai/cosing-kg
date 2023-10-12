@@ -15,21 +15,12 @@ stages:
       - stages/01_download.sh
     outs:
       - download
-      - list
-  unzip: 
-    cmd: stages/02_unzip.sh
-    deps:
-      - stages/02_unzip.sh
-      - download
-      - list
-    outs:
-      - raw
   build: 
-    cmd: stages/03_build.sh
+    cmd: stages/02_build.sh
     deps:
-      - stages/03_build.sh
-      - stages/csv2parquet.sh
-      - raw
-      - list
+      - stages/02_build.sh
+      - stages/csv-to-rdf.pl
+      - stages/cpanfile
+      - download
     outs:
       - brick
