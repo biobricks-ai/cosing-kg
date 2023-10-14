@@ -3,9 +3,9 @@
 
 # The complete process can be executed using:
 # dvc repro
-# If you want to force redoing the process use 
+# If you want to force redoing the process use
 # dvc repro -f
-# Individual stage can be executed using: 
+# Individual stage can be executed using:
 # dvc repro <stage>
 
 stages:
@@ -15,12 +15,19 @@ stages:
       - stages/01_download.sh
     outs:
       - download
-  build: 
+  build:
     cmd: stages/02_build.sh
     deps:
       - stages/02_build.sh
       - stages/csv-to-rdf.pl
       - stages/cpanfile
       - download
+    outs:
+      - raw
+  brick:
+    cmd: stages/03_hdt.sh
+    deps:
+      - stages/03_hdt.sh
+      - raw
     outs:
       - brick

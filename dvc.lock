@@ -1,22 +1,12 @@
 schema: '2.0'
 stages:
-  1-stage:
-    cmd: Rscript stages/01-stage.R
-    deps:
-    - path: stages/01-stage.R
-      md5: c468dc14527e00c339f146e1dba2bd3b
-      size: 118
-    outs:
-    - path: data/mtcars.parquet
-      md5: 77cf29accf9535522fad7db1486eff9a
-      size: 6243
   download:
     cmd: stages/01_download.sh
     deps:
     - path: stages/01_download.sh
       hash: md5
-      md5: 27a3f5d3f7417287e71991787b6a1af0
-      size: 686
+      md5: 8842622eb5e6f9096ad5a9515af54c87
+      size: 524
     outs:
     - path: download
       hash: md5
@@ -33,8 +23,8 @@ stages:
       nfiles: 1
     - path: stages/02_build.sh
       hash: md5
-      md5: da28d6d8900229780a1df3acfd75f9fb
-      size: 410
+      md5: 8557c609f028daed18c294b9062cf761
+      size: 368
     - path: stages/cpanfile
       hash: md5
       md5: 51c39f21801bb4b39d2ac02f770b9f38
@@ -44,8 +34,26 @@ stages:
       md5: ff723a015cea09aacf5953ce9a5151fb
       size: 4720
     outs:
-    - path: brick
+    - path: raw
       hash: md5
       md5: 34162fbaad15ce7782b531c2558f1058.dir
       size: 10283328
       nfiles: 1
+  brick:
+    cmd: stages/03_hdt.sh
+    deps:
+    - path: raw
+      hash: md5
+      md5: 34162fbaad15ce7782b531c2558f1058.dir
+      size: 10283328
+      nfiles: 1
+    - path: stages/03_hdt.sh
+      hash: md5
+      md5: 9654d267ada89cb6322234bb5c3e6e38
+      size: 390
+    outs:
+    - path: brick
+      hash: md5
+      md5: da2ca8caf8aeea5f8813505c2974e2c8.dir
+      size: 1478444
+      nfiles: 2
