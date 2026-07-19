@@ -1,4 +1,6 @@
 logs
 /download
 /raw
+/cache
 /brick
+brick/

@@ -1,0 +1,16 @@
+{
+  "endpoint": {
+    "iri": "https://biobricks.ai/endpoint/cosmetic-ingredient-use",
+    "label": "cosmetic ingredient use",
+    "subClassOf": "http://purl.obolibrary.org/obo/IAO_0000027",
+    "comment": "A data item recording the regulated cosmetic use of a substance in the EU CosIng database: its declared cosmetic function(s) and any restriction/prohibition under the Annexes of Regulation (EC) No 1223/2009."
+  },
+  "annexes": {
+    "II":  {"status": "prohibited", "label": "Annex II - substances prohibited in cosmetic products"},
+    "III": {"status": "restricted", "label": "Annex III - substances restricted in cosmetic products"},
+    "IV":  {"status": "colorant",   "label": "Annex IV - colorants allowed in cosmetic products"},
+    "V":   {"status": "preservative", "label": "Annex V - preservatives allowed in cosmetic products"},
+    "VI":  {"status": "uv-filter",  "label": "Annex VI - UV filters allowed in cosmetic products"},
+    "I":   {"status": "listed",     "label": "Annex I - illustrative list by category of cosmetic products"}
+  }
+}

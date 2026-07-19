@@ -1,0 +1,3 @@
+https://github.com/biobricks-ai/eu-cosing-ingredients#76531ae8b3d2be517f2ed446208fd18974388e07
+https://github.com/biobricks-ai/cosing#5f8ca7dfe6ea5f85a539470c9c06a8d53f95ed93
+https://github.com/biobricks-ai/pubchem-identifiers-structures#eb24ad92d22bc6559fa4ecf6d1ea9ef82b08d0b8
