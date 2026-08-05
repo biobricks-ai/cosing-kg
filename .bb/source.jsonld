@@ -1,0 +1,56 @@
+{
+  "@context": "../../context/source.context.jsonld",
+  "@type": "dcat:Dataset",
+  "@id": "https://biobricks.ai/bricks/cosing-kg",
+  "dcterms:title": "cosing-kg - EU CosIng Cosmetic Ingredient Database as RDF knowledge graph",
+  "dcterms:description": "The 'cosing-kg' brick transforms the EU CosIng (Cosmetic Ingredient Database) tabular bricks into RDF for the biobricks knowledge graph. Each CosIng ingredient record becomes a node with INCI name, CAS/EC numbers, declared cosmetic function(s) and regulatory annex status, joined to the compound-bridge InChIKey hub. It is derived from three biobricks sources pinned in .bb/dependencies.txt: eu-cosing-ingredients (the 24,094-ingredient table), cosing (the Annex II-VI tables), and pubchem-identifiers-structures (the CAS->InChIKey map). The upstream regulatory data originates from the European Commission's CosIng database under Cosmetics Regulation (EC) No 1223/2009; PubChem provides the identifier mapping.",
+  "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+  "dcterms:creator": "European Commission (source data); BioBricks.ai (RDF transformation)",
+  "dcterms:publisher": "European Commission (DG GROW) - CosIng; U.S. NIH/NLM/NCBI - PubChem",
+  "dcterms:identifier": "https://github.com/biobricks-ai/cosing-kg",
+  "biobricks:licenseName": "CC BY 4.0 (EU Commission reuse policy; governs the CosIng-derived data)",
+  "biobricks:licenseClass": "attribution",
+  "biobricks:merckCommercialUse": "permitted",
+  "biobricks:licenseEvidence": [
+    {
+      "source": "README.md (Sources / dependencies)",
+      "quote": "Pinned in .bb/dependencies.txt: - eu-cosing-ingredients ... the full 24,094-ingredient table ... - cosing ... the Annex II-VI tables ... - pubchem-identifiers-structures ... the CAS -> InChIKey identifier map.",
+      "confidence": "high"
+    },
+    {
+      "source": "https://commission.europa.eu/legal-notice_en",
+      "quote": "Unless otherwise indicated (e.g. in individual copyright notices), content owned by the EU on this website is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) licence",
+      "confidence": "high"
+    },
+    {
+      "source": "README.md",
+      "quote": "Transforms the EU CosIng (Cosmetic Ingredient Database) tabular bricks into principled RDF ... regulated under Cosmetics Regulation (EC) No 1223/2009.",
+      "confidence": "high"
+    }
+  ],
+  "biobricks:reviewed": false,
+  "biobricks:reviewNotes": "Determined by the annotation agent. cosing-kg is a pure RDF transformation of the EU CosIng regulatory data (via the eu-cosing-ingredients and cosing bricks), enriched with the PubChem CAS->InChIKey map. The substantive content is EU Commission CosIng data, reusable under CC BY 4.0 per the Commission legal notice / Decision 2011/833/EU; PubChem identifier data is US-government/public-domain (open) and not more restrictive. The most restrictive component is therefore CC BY 4.0 (attribution), commercial permitted with attribution. HUMAN CHECK: confirm the sibling 'eu-cosing-ingredients' and 'pubchem-identifiers-structures' brick licenses (annotated separately) do not introduce a stricter term; CosIng raw data could arguably be CC0 (open).",
+  "prov:wasDerivedFrom": [
+    {
+      "@type": "dcat:Dataset",
+      "@id": "https://ec.europa.eu/growth/tools-databases/cosing/",
+      "dcterms:title": "CosIng - Cosmetic Ingredient Database (European Commission)",
+      "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+      "dcterms:publisher": "European Commission (DG GROW)"
+    },
+    {
+      "@type": "dcat:Dataset",
+      "@id": "https://github.com/biobricks-ai/eu-cosing-ingredients",
+      "dcterms:title": "eu-cosing-ingredients - full CosIng 24,094-ingredient table",
+      "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+      "dcterms:publisher": "European Commission (DG GROW) / BioBricks.ai"
+    },
+    {
+      "@type": "dcat:Dataset",
+      "@id": "https://pubchem.ncbi.nlm.nih.gov/",
+      "dcterms:title": "PubChem identifiers/structures (CAS -> InChIKey mapping)",
+      "dcterms:license": "https://www.usa.gov/government-works",
+      "dcterms:publisher": "U.S. NIH / NLM / NCBI"
+    }
+  ]
+}
